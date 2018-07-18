@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<a href="<%=subs_url%>">Back to de subs loser</a>
+<h2><%= @post.title %></h2>
+<h3> <a href="http://<%= @post.url %>"><%= @post.url %></a></h3>
+<h3><%= @post.content %></h3>
+<h2>Comments</h2>
+<form action="<%=comments_url%>" method="post">
+  <input type="text" name="comment[content]" placeholder="Write yo comment kid">
+  <input type="hidden" name="comment[post_id]" value="<%=@post.id%>">
+  <%= embed_auth_token %>
+  <input type="submit" value="Sumbit yo ment guy">
+</form>
+<ul>
+<% @post.comments.where(parent_comment_id: nil).each do |comment| %>
+  <li>
+    <a href="<%= comment_url(comment) %>">thread </a><%= comment.content %>
+    <%= render 'comments/comment', comment: comment %>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,11 @@
+<h1>Sign Up My Guy!</h1>
+
+<form class="" action="<%=users_url%>" method="post">
+  <%= embed_auth_token %>
+  <label for="">Username:
+    <input type="text" name="user[username]"></label>
+  <label for="">Password:
+    <input type="password" name="user[password]"></label>
+
+  <input type="submit" value="Sign Up!">
+</form>

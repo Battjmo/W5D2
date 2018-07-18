@@ -1,0 +1,8 @@
+<ul>
+  <a href="<%= comment_url(comment) %>">show</a>
+  <% comment.child_comments.each do |child| %>
+    <li><%= child.content %>
+      <%= render 'comments/comment', comment: child %>
+    </li>
+  <% end %>
+</ul>

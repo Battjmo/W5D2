@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RedditLite</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+    <form class="" action="<%=session_url%>" method="post">
+      <%= embed_auth_token %>
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Sign Out My Dude! You Already Know What It Is!">
+    </form>
+    <% else %>
+    <a href="<%=new_user_url%>">Sign Up!</a>
+    <a href="<%=new_session_url%>">Sign In!</a>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

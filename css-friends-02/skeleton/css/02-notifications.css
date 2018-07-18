@@ -1,0 +1,31 @@
+/* PHASE 2: Notifications */
+
+.notification-button {
+  position: relative;
+}
+
+.notification-button a {
+  /* padding-right: 10px; */
+}
+
+.badge {
+  background-color: red;
+  max-height: 5px;
+  color: white;
+  padding: 1px 6px;;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  background-color: white;
+
+}
+
+.dropdown li {
+  color: black;
+  height: 40px;
+  width: 240px;
+}
